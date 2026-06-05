@@ -67,7 +67,7 @@ export default function PasswordGenerator() {
       <Helmet>
         <title>Free Password Generator — Strong Random Passwords Online</title>
         <meta name="description" content="Generate strong, random passwords instantly. Customize length and character types. Free, secure, runs in your browser — nothing is ever stored." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/password-generator" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/password-generator" />
       </Helmet>
 
       <main className="tool-page">

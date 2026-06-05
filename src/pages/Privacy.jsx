@@ -19,7 +19,7 @@ export default function Privacy() {
             <li>We use Google Analytics to understand traffic. No personal data is collected.</li>
           </ul>
         </div>
-        <p style={{ marginTop: "1.5rem", fontSize: 13, color: "#94a3b8" }}>Last updated: June 2026 · Contact: affanfahad7@gmail.com</p>
+        <p style={{ marginTop: "1.5rem", fontSize: 13, color: "#94a3b8" }}>Last updated: June 2025 · Contact: affanfahad7@gmail.com</p>
       </main>
     </>
   );
