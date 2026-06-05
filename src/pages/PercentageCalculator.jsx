@@ -33,7 +33,7 @@ export default function PercentageCalculator() {
       <Helmet>
         <title>Free Percentage Calculator — Calculate % Online Instantly</title>
         <meta name="description" content="Calculate percentages instantly — find what percent of a number is, percentage increase/decrease, and more. Free online percentage calculator." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/percentage-calculator" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/percentage-calculator" />
       </Helmet>
       <main className="tool-page">
         <div className="tool-header">

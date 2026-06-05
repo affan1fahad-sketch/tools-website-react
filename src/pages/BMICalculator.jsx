@@ -39,7 +39,7 @@ export default function BMICalculator() {
       <Helmet>
         <title>Free BMI Calculator — Check Your Body Mass Index Online</title>
         <meta name="description" content="Calculate your BMI (Body Mass Index) instantly. Supports metric and imperial units. Find out if you are underweight, normal, overweight or obese. Free online BMI calculator." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/bmi-calculator" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/bmi-calculator" />
       </Helmet>
       <main className="tool-page">
         <div className="tool-header">

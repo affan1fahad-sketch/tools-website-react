@@ -104,7 +104,7 @@ export default function ColorPicker() {
       <Helmet>
         <title>Free Color Picker — HEX, RGB, HSL Converter Online</title>
         <meta name="description" content="Pick any color and instantly convert between HEX, RGB, HSL and CMYK formats. Generate color shades and tints. Free online color picker tool." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/color-picker" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/color-picker" />
       </Helmet>
 
       <main className="tool-page">

@@ -77,7 +77,7 @@ export default function ImageCompressor() {
       <Helmet>
         <title>Free Image Compressor — Compress JPG & PNG Online</title>
         <meta name="description" content="Compress JPG and PNG images online for free. Reduce image file size without losing quality. No upload, works in your browser instantly." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/image-compressor" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/image-compressor" />
       </Helmet>
 
       <main className="tool-page">

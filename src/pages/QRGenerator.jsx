@@ -26,7 +26,7 @@ export default function QRGenerator() {
       <Helmet>
         <title>Free QR Code Generator — Create QR Codes Online Instantly</title>
         <meta name="description" content="Generate QR codes for any URL, text, email, or phone number for free. Download as PNG instantly. No signup, no watermark." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/qr-code-generator" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/qr-code-generator" />
       </Helmet>
 
       <main className="tool-page">

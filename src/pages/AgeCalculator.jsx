@@ -32,7 +32,7 @@ export default function AgeCalculator() {
       <Helmet>
         <title>Free Age Calculator — Calculate Your Exact Age Online</title>
         <meta name="description" content="Calculate your exact age in years, months, days and weeks. Find days until your next birthday. Free online age calculator." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/age-calculator" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/age-calculator" />
       </Helmet>
       <main className="tool-page">
         <div className="tool-header">

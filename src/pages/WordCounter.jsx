@@ -39,7 +39,7 @@ export default function WordCounter() {
       <Helmet>
         <title>Free Word Counter — Count Words, Characters & Reading Time Online</title>
         <meta name="description" content="Count words, characters, sentences and paragraphs instantly. Get reading time and speaking time estimates. Free online word counter tool — no signup needed." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/word-counter" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/word-counter" />
       </Helmet>
 
       <main className="tool-page">

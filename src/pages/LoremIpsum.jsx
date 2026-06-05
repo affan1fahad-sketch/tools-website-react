@@ -60,7 +60,7 @@ export default function LoremIpsum() {
       <Helmet>
         <title>Free Lorem Ipsum Generator — Placeholder Text Online</title>
         <meta name="description" content="Generate Lorem Ipsum placeholder text instantly. Choose paragraphs, sentences or words. Free online Lorem Ipsum generator for designers and developers." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/lorem-ipsum-generator" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/lorem-ipsum-generator" />
       </Helmet>
       <main className="tool-page">
         <div className="tool-header">

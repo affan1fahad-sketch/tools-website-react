@@ -33,7 +33,7 @@ export default function Home() {
       <Helmet>
         <title>Free Online Tools — PDF, QR Code, Password, BMI, Age Calculator & More</title>
         <meta name="description" content="Free browser-based tools: Image to PDF, QR code generator, password generator, BMI calculator, age calculator, unit converter and more. No signup, 100% free." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/" />
       </Helmet>
       <main className="home">
         <section className="hero">

@@ -71,7 +71,7 @@ export default function ImageToPDF() {
       <Helmet>
         <title>Free Image to PDF Converter — Merge Multiple Images Online</title>
         <meta name="description" content="Convert JPG, PNG, and other images to PDF for free. Upload multiple images, reorder them, choose fit or fill layout, and download instantly. No signup needed." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/image-to-pdf" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/image-to-pdf" />
       </Helmet>
 
       <main className="tool-page">

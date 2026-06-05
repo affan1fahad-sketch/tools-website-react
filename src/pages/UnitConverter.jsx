@@ -62,7 +62,7 @@ export default function UnitConverter() {
       <Helmet>
         <title>Free Unit Converter — Length, Weight, Temperature, Speed Online</title>
         <meta name="description" content="Convert units instantly — length, weight, temperature, speed, area and volume. Free online unit converter, no signup needed." />
-        <link rel="canonical" href="https://free-online-tools1.netlify.app/unit-converter" />
+        <link rel="canonical" href="https://free-online-tools1.vercel.app/unit-converter" />
       </Helmet>
       <main className="tool-page">
         <div className="tool-header">
