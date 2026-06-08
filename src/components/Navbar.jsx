@@ -29,7 +29,6 @@ function LogoIcon() {
 export default function Navbar() {
   const [dropOpen, setDropOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
   const closeMobile = () => setMobileOpen(false);
 
   return (
@@ -40,57 +39,42 @@ export default function Navbar() {
           <span className="logo-text">Tool<span>Kit</span></span>
           <span className="logo-badge">FREE</span>
         </NavLink>
-
-        {/* Desktop links */}
         <div className="nav-links">
-          <NavLink to="/" end className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
-          <div className="nav-dropdown"
-            onMouseEnter={() => setDropOpen(true)}
-            onMouseLeave={() => setDropOpen(false)}>
+          <NavLink to="/" end className={({isActive})=>isActive?"nav-link active":"nav-link"}>Home</NavLink>
+          <div className="nav-dropdown" onMouseEnter={()=>setDropOpen(true)} onMouseLeave={()=>setDropOpen(false)}>
             <button className="nav-link dropdown-trigger">Tools ▾</button>
             {dropOpen && (
               <div className="dropdown-menu">
-                {allTools.map(t => (
-                  <NavLink key={t.path} to={t.path} className="dropdown-item" onClick={() => setDropOpen(false)}>
-                    {t.label}
-                  </NavLink>
-                ))}
+                {allTools.map(t=><NavLink key={t.path} to={t.path} className="dropdown-item" onClick={()=>setDropOpen(false)}>{t.label}</NavLink>)}
               </div>
             )}
           </div>
+          <NavLink to="/about" className={({isActive})=>isActive?"nav-link active":"nav-link"}>About</NavLink>
+          <NavLink to="/contact" className={({isActive})=>isActive?"nav-link active":"nav-link"}>Contact</NavLink>
           <NavLink to="/donate" className="nav-link donate-nav-btn">☕ Support</NavLink>
         </div>
-
-        {/* Hamburger */}
-        <button className={`hamburger ${mobileOpen ? "open" : ""}`} onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-          <span /><span /><span />
+        <button className={`hamburger ${mobileOpen?"open":""}`} onClick={()=>setMobileOpen(!mobileOpen)} aria-label="Menu">
+          <span/><span/><span/>
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
+      <div className={`mobile-menu ${mobileOpen?"open":""}`}>
         <div className="mobile-menu-section">
           <div className="mobile-menu-title">Navigation</div>
           <div className="mobile-menu-grid">
-            <NavLink to="/" end className={({ isActive }) => `mobile-menu-item ${isActive ? "active" : ""}`} onClick={closeMobile}>🏠 Home</NavLink>
+            <NavLink to="/" end className={({isActive})=>`mobile-menu-item ${isActive?"active":""}`} onClick={closeMobile}>🏠 Home</NavLink>
+            <NavLink to="/about" className={({isActive})=>`mobile-menu-item ${isActive?"active":""}`} onClick={closeMobile}>👋 About</NavLink>
+            <NavLink to="/contact" className={({isActive})=>`mobile-menu-item ${isActive?"active":""}`} onClick={closeMobile}>✉️ Contact</NavLink>
             <NavLink to="/donate" className="mobile-menu-item" onClick={closeMobile}>☕ Support</NavLink>
           </div>
         </div>
         <div className="mobile-menu-section">
           <div className="mobile-menu-title">All Tools</div>
           <div className="mobile-menu-grid">
-            {allTools.map(t => (
-              <NavLink key={t.path} to={t.path}
-                className={({ isActive }) => `mobile-menu-item ${isActive ? "active" : ""}`}
-                onClick={closeMobile}>
-                {t.label}
-              </NavLink>
-            ))}
+            {allTools.map(t=><NavLink key={t.path} to={t.path} className={({isActive})=>`mobile-menu-item ${isActive?"active":""}`} onClick={closeMobile}>{t.label}</NavLink>)}
           </div>
         </div>
-        <NavLink to="/donate" className="mobile-donate-btn" onClick={closeMobile}>
-          ☕ Support this project
-        </NavLink>
+        <NavLink to="/donate" className="mobile-donate-btn" onClick={closeMobile}>☕ Support this project</NavLink>
       </div>
     </>
   );
