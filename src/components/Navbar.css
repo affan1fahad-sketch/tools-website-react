@@ -3,15 +3,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: 58px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(241,245,249,0.8);
+  height: 60px;
+  background: rgba(6,6,16,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .nav-logo {
@@ -25,39 +24,37 @@
 .logo-icon-box {
   width: 32px;
   height: 32px;
-  background: #2563eb;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
   border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 16px rgba(99,102,241,0.4);
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.3);
 }
-
 .nav-logo:hover .logo-icon-box {
   transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 0 24px rgba(99,102,241,0.6);
 }
 
 .logo-text {
   font-size: 16px;
-  font-weight: 800;
-  color: #0f172a;
+  font-weight: 700;
+  color: #fff;
   letter-spacing: -0.5px;
 }
-.logo-text span { color: #2563eb; }
+.logo-text span { color: #818cf8; }
 
 .logo-badge {
   font-size: 10px;
   font-weight: 700;
-  background: linear-gradient(135deg, #dbeafe, #eff6ff);
-  color: #1d4ed8;
+  background: rgba(99,102,241,0.2);
+  color: #a5b4fc;
   padding: 2px 8px;
   border-radius: 20px;
-  letter-spacing: 0.3px;
-  border: 1px solid #bfdbfe;
+  border: 1px solid rgba(99,102,241,0.3);
 }
 
-/* Desktop nav */
 .nav-links {
   display: flex;
   align-items: center;
@@ -67,40 +64,41 @@
 .nav-link {
   font-size: 13px;
   font-weight: 500;
-  color: #64748b;
+  color: rgba(255,255,255,0.55);
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 8px;
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
-.nav-link:hover { background: #f1f5f9; color: #0f172a; }
-.nav-link.active { background: #eff6ff; color: #2563eb; font-weight: 600; }
+.nav-link:hover { background: rgba(255,255,255,0.07); color: #fff; }
+.nav-link.active { background: rgba(99,102,241,0.15); color: #a5b4fc; }
 
-/* Dropdown */
 .nav-dropdown { position: relative; }
-
 .dropdown-trigger {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
-  color: #64748b;
+  color: rgba(255,255,255,0.55);
   padding: 6px 12px;
   border-radius: 8px;
   transition: background 0.15s, color 0.15s;
 }
-.dropdown-trigger:hover { background: #f1f5f9; color: #0f172a; }
+.dropdown-trigger:hover { background: rgba(255,255,255,0.07); color: #fff; }
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 8px);
   left: 0;
-  background: #fff;
-  border: 1px solid #f1f5f9;
+  background: #0f0f1a;
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   padding: 6px;
   min-width: 380px;
   z-index: 200;
@@ -113,28 +111,26 @@
 .dropdown-item {
   font-size: 12.5px;
   font-weight: 500;
-  color: #374151;
+  color: rgba(255,255,255,0.6);
   padding: 8px 12px;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.1s, color 0.1s;
   white-space: nowrap;
 }
-.dropdown-item:hover { background: #eff6ff; color: #2563eb; }
+.dropdown-item:hover { background: rgba(99,102,241,0.15); color: #a5b4fc; }
 
-/* Donate button */
 .donate-nav-btn {
-  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+  background: linear-gradient(135deg, #6366f1, #a855f7) !important;
   color: #fff !important;
   font-weight: 700 !important;
   border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.35);
   transition: all 0.2s !important;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
 }
 .donate-nav-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(37,99,235,0.35) !important;
-  background: linear-gradient(135deg, #1d4ed8, #6d28d9) !important;
+  box-shadow: 0 6px 20px rgba(99,102,241,0.5) !important;
 }
 
 /* Hamburger */
@@ -147,14 +143,13 @@
   cursor: pointer;
   padding: 6px;
   border-radius: 8px;
-  transition: background 0.15s;
 }
-.hamburger:hover { background: #f1f5f9; }
+.hamburger:hover { background: rgba(255,255,255,0.07); }
 .hamburger span {
   display: block;
   width: 22px;
   height: 2px;
-  background: #0f172a;
+  background: rgba(255,255,255,0.7);
   border-radius: 2px;
   transition: all 0.25s;
 }
@@ -166,58 +161,50 @@
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 58px;
+  top: 60px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #fff;
+  background: #060610;
   z-index: 99;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 1.25rem;
   animation: fadeIn 0.2s ease both;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
-
 .mobile-menu.open { display: block; }
 
-.mobile-menu-section {
-  margin-bottom: 1.5rem;
-}
-
+.mobile-menu-section { margin-bottom: 1.5rem; }
 .mobile-menu-title {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #94a3b8;
+  color: rgba(255,255,255,0.25);
   padding: 0 8px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
-
-.mobile-menu-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-
+.mobile-menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .mobile-menu-item {
   font-size: 13px;
   font-weight: 500;
-  color: #374151;
+  color: rgba(255,255,255,0.6);
   padding: 10px 12px;
   border-radius: 10px;
   text-decoration: none;
-  background: #f8fafc;
-  border: 1px solid #f1f5f9;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
   transition: all 0.15s;
   display: block;
 }
-.mobile-menu-item:hover, .mobile-menu-item.active { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+.mobile-menu-item:hover,
+.mobile-menu-item.active { background: rgba(99,102,241,0.15); color: #a5b4fc; border-color: rgba(99,102,241,0.3); }
 
 .mobile-donate-btn {
   display: block;
   width: 100%;
   padding: 13px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: linear-gradient(135deg, #6366f1, #a855f7);
   color: #fff;
   text-align: center;
   border-radius: 12px;
@@ -225,10 +212,9 @@
   font-weight: 700;
   text-decoration: none;
   margin-top: 1rem;
-  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+  box-shadow: 0 4px 20px rgba(99,102,241,0.4);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .navbar { padding: 0 1rem; }
   .nav-links { display: none; }

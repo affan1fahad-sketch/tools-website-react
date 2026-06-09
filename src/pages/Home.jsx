@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import AdBanner from "../components/AdBanner";
 import { useRipple } from "../hooks/useRipple";
+import { useToolHistory } from "../hooks/useToolHistory";
 import "./Home.css";
 
 const tools = [
@@ -32,6 +33,7 @@ export default function Home() {
   const ripple = useRipple();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
+  const { recent, favorites, addRecent, toggleFavorite, isFavorite } = useToolHistory();
 
   const filtered = useMemo(() => {
     return tools.filter(t => {
@@ -41,6 +43,12 @@ export default function Home() {
       return matchCat && matchSearch;
     });
   }, [search, category]);
+
+  const handleToolClick = (e, tool) => {
+    ripple(e);
+    addRecent(tool);
+    navigate(tool.path);
+  };
 
   return (
     <>
@@ -64,49 +72,73 @@ export default function Home() {
 
         <div className="ad-wrap"><AdBanner /></div>
 
+        {/* Recently used */}
+        {recent.length > 0 && (
+          <section className="tools-section" style={{ paddingBottom: 0 }}>
+            <div className="section-header"><span className="section-title">⏱ Recently used</span></div>
+            <div className="recent-strip">
+              {recent.map(tool => (
+                <button key={tool.path} className="recent-chip ripple-btn ripple-dark"
+                  onClick={e => handleToolClick(e, tool)}>
+                  <span>{tool.icon}</span> {tool.title}
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Favorites */}
+        {favorites.length > 0 && (
+          <section className="tools-section" style={{ paddingBottom: 0 }}>
+            <div className="section-header"><span className="section-title">⭐ Favorites</span></div>
+            <div className="tools-grid">
+              {favorites.map((tool, i) => (
+                <button key={tool.path}
+                  className={`tool-card ${tool.cardClass} ripple-btn ripple-dark`}
+                  style={{ animationDelay: `${i * 0.05}s` }}
+                  onClick={e => handleToolClick(e, tool)}>
+                  <div className="tool-card-top">
+                    <div className="tool-icon-wrap" style={{ background: tool.color }}><span>{tool.icon}</span></div>
+                    <button className="fav-btn active" onClick={e => { e.stopPropagation(); toggleFavorite(tool); }}>⭐</button>
+                  </div>
+                  <h3 className="tool-title">{tool.title}</h3>
+                  <p className="tool-desc">{tool.desc}</p>
+                  <span className="tool-cta">Open tool →</span>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section className="tools-section">
-          {/* Search bar */}
+          {/* Search */}
           <div className="search-wrap">
             <span className="search-icon">🔍</span>
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search tools..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-            />
+            <input type="text" className="search-input" placeholder="Search tools..."
+              value={search} onChange={e => setSearch(e.target.value)} />
             {search && <button className="search-clear" onClick={() => setSearch("")}>✕</button>}
           </div>
 
-          {/* Category filters */}
+          {/* Categories */}
           <div className="category-filters">
             {CATEGORIES.map(cat => (
-              <button key={cat}
-                className={`cat-filter-btn ${category === cat ? "active" : ""}`}
-                onClick={() => setCategory(cat)}>
-                {cat}
-              </button>
+              <button key={cat} className={`cat-filter-btn ${category === cat ? "active" : ""}`}
+                onClick={() => setCategory(cat)}>{cat}</button>
             ))}
           </div>
 
-          {/* Results count */}
           <div className="section-header">
             <span className="section-title">
-              {search || category !== "All"
-                ? `${filtered.length} tool${filtered.length !== 1 ? "s" : ""} found`
-                : "All tools"}
+              {search || category !== "All" ? `${filtered.length} tool${filtered.length !== 1 ? "s" : ""} found` : "All tools"}
             </span>
           </div>
 
-          {/* Tools grid */}
           {filtered.length === 0 ? (
             <div className="no-results">
               <div style={{ fontSize: "2.5rem", marginBottom: "0.75rem" }}>🔍</div>
               <p>No tools found for "<strong>{search}</strong>"</p>
               <button className="cat-filter-btn active" style={{ marginTop: "0.75rem" }}
-                onClick={() => { setSearch(""); setCategory("All"); }}>
-                Clear search
-              </button>
+                onClick={() => { setSearch(""); setCategory("All"); }}>Clear search</button>
             </div>
           ) : (
             <div className="tools-grid">
@@ -114,12 +146,17 @@ export default function Home() {
                 <button key={tool.path}
                   className={`tool-card ${tool.cardClass} ripple-btn ripple-dark`}
                   style={{ animationDelay: `${i * 0.05}s` }}
-                  onClick={(e) => { ripple(e); navigate(tool.path); }}>
+                  onClick={e => handleToolClick(e, tool)}>
                   <div className="tool-card-top">
-                    <div className="tool-icon-wrap" style={{ background: tool.color }}>
-                      <span>{tool.icon}</span>
+                    <div className="tool-icon-wrap" style={{ background: tool.color }}><span>{tool.icon}</span></div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                      {tool.badge && <span className={`tool-badge ${tool.badgeClass}`}>{tool.badge}</span>}
+                      <button className={`fav-btn ${isFavorite(tool.path) ? "active" : ""}`}
+                        onClick={e => { e.stopPropagation(); toggleFavorite(tool); }}
+                        title={isFavorite(tool.path) ? "Remove from favorites" : "Add to favorites"}>
+                        {isFavorite(tool.path) ? "⭐" : "☆"}
+                      </button>
                     </div>
-                    {tool.badge && <span className={`tool-badge ${tool.badgeClass}`}>{tool.badge}</span>}
                   </div>
                   <h3 className="tool-title">{tool.title}</h3>
                   <p className="tool-desc">{tool.desc}</p>
