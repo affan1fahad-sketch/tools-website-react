@@ -1,0 +1,78 @@
+.md-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.md-col { display: flex; flex-direction: column; }
+.md-col-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+}
+.md-col-label { font-size: 12px; font-weight: 600; color: #94a3b8; }
+.md-toggle-btn {
+  font-size: 11px; font-weight: 600;
+  padding: 3px 10px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #fff;
+  color: #64748b;
+  transition: all 0.15s;
+}
+.md-toggle-btn:hover { border-color: #93c5fd; color: #2563eb; }
+.md-toggle-btn.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+.md-textarea {
+  width: 100%;
+  min-height: 280px;
+  padding: 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0 0 12px 12px;
+  font-size: 13px;
+  font-family: monospace;
+  color: #0f172a;
+  background: #fff;
+  resize: vertical;
+  line-height: 1.6;
+}
+.md-textarea:focus { outline: none; border-color: #93c5fd; }
+
+.md-preview {
+  width: 100%;
+  min-height: 280px;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0 0 12px 12px;
+  background: #fff;
+  color: #0f172a;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.md-preview h1, .md-preview h2, .md-preview h3, .md-preview h4, .md-preview h5, .md-preview h6 {
+  margin: 0.75em 0 0.4em;
+  font-weight: 800;
+  color: #0f172a;
+}
+.md-preview h1 { font-size: 1.6em; }
+.md-preview h2 { font-size: 1.35em; }
+.md-preview h3 { font-size: 1.15em; }
+.md-preview p { margin: 0.5em 0; color: #475569; }
+.md-preview ul, .md-preview ol { padding-left: 1.4em; margin: 0.5em 0; color: #475569; }
+.md-preview li { margin-bottom: 0.25em; }
+.md-preview a { color: #2563eb; text-decoration: underline; }
+.md-preview code { background: #eff6ff; color: #2563eb; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+.md-preview pre { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; overflow-x: auto; margin: 0.5em 0; }
+.md-preview pre code { background: none; padding: 0; }
+.md-preview blockquote { border-left: 3px solid #2563eb; padding-left: 12px; color: #94a3b8; margin: 0.5em 0; font-style: italic; }
+.md-preview hr { border: none; border-top: 1px solid #e2e8f0; margin: 1em 0; }
+.md-preview img { max-width: 100%; border-radius: 8px; margin: 0.5em 0; }
+
+@media (max-width: 600px) {
+  .md-layout { grid-template-columns: 1fr; }
+}

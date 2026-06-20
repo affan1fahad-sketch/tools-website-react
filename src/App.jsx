@@ -14,6 +14,7 @@ import BMICalculator from "./pages/BMICalculator";
 import UnitConverter from "./pages/UnitConverter";
 import PercentageCalculator from "./pages/PercentageCalculator";
 import LoremIpsum from "./pages/LoremIpsum";
+import MarkdownToHtml from "./pages/MarkdownToHtml";
 import Donate from "./pages/Donate";
 import Privacy from "./pages/Privacy";
 import About from "./pages/About";
@@ -38,6 +39,7 @@ function App() {
           <Route path="/unit-converter" element={<UnitConverter />} />
           <Route path="/percentage-calculator" element={<PercentageCalculator />} />
           <Route path="/lorem-ipsum-generator" element={<LoremIpsum />} />
+          <Route path="/markdown-to-html" element={<MarkdownToHtml />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/about" element={<About />} />

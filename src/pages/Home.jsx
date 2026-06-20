@@ -14,6 +14,7 @@ const tools = [
   { path: "/word-counter", icon: "📝", color: "#fce7f3", cardClass: "card-pink", title: "Word Counter", desc: "Count words, characters and reading time.", category: "Text" },
   { path: "/color-picker", icon: "🎨", color: "#fce7f3", cardClass: "card-pink", title: "Color Picker", desc: "Convert HEX, RGB, HSL and CMYK colors.", category: "Convert" },
   { path: "/lorem-ipsum-generator", icon: "📄", color: "#f3e8ff", cardClass: "card-purple", title: "Lorem Ipsum", desc: "Generate placeholder text for designs.", category: "Generate" },
+  { path: "/markdown-to-html", icon: "📋", color: "#dbeafe", cardClass: "card-blue", title: "Markdown to HTML", desc: "Convert Markdown to HTML with live preview.", badge: "New", badgeClass: "badge-new" },
   { path: "/age-calculator", icon: "🎂", color: "#fce7f3", cardClass: "card-pink", title: "Age Calculator", desc: "Calculate your exact age and birthday.", badge: "New", badgeClass: "badge-new", category: "Calculate" },
   { path: "/bmi-calculator", icon: "⚖️", color: "#dcfce7", cardClass: "card-green", title: "BMI Calculator", desc: "Check your Body Mass Index instantly.", badge: "New", badgeClass: "badge-new", category: "Calculate" },
   { path: "/unit-converter", icon: "📐", color: "#dbeafe", cardClass: "card-blue", title: "Unit Converter", desc: "Convert length, weight, temperature & more.", badge: "New", badgeClass: "badge-new", category: "Convert" },

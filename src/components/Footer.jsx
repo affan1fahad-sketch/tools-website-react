@@ -21,6 +21,7 @@ export default function Footer() {
             <NavLink to="/qr-code-generator">QR Code Generator</NavLink>
             <NavLink to="/image-compressor">Image Compressor</NavLink>
             <NavLink to="/lorem-ipsum-generator">Lorem Ipsum</NavLink>
+            <NavLink to="/markdown-to-html">Markdown to HTML</NavLink>
             <NavLink to="/color-picker">Color Picker</NavLink>
           </div>
           <div className="footer-col">
