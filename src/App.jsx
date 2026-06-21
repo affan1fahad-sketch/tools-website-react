@@ -17,6 +17,8 @@ import LoremIpsum from "./pages/LoremIpsum";
 import MarkdownToHtml from "./pages/MarkdownToHtml";
 import ScientificCalculator from "./pages/ScientificCalculator";
 import TextCaseConverter from "./pages/TextCaseConverter";
+import Stopwatch from "./pages/Stopwatch";
+import TipCalculator from "./pages/TipCalculator";
 import Donate from "./pages/Donate";
 import Privacy from "./pages/Privacy";
 import "./App.css";
@@ -42,6 +44,8 @@ function App() {
           <Route path="/markdown-to-html" element={<MarkdownToHtml />} />
           <Route path="/calculator" element={<ScientificCalculator />} />
           <Route path="/text-case-converter" element={<TextCaseConverter />} />
+          <Route path="/stopwatch" element={<Stopwatch />} />
+          <Route path="/tip-calculator" element={<TipCalculator />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>

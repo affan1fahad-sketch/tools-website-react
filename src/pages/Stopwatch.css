@@ -1,0 +1,117 @@
+.sw-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.sw-mode-toggle {
+  display: flex;
+  background: var(--bg-card2);
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.sw-display {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  font-family: monospace;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+  padding: 1rem 0;
+}
+
+.sw-timer-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.sw-time-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.sw-time-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sw-progress-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sw-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 10px;
+  transition: width 0.1s linear;
+}
+
+.sw-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sw-lap-btn {
+  padding: 13px 16px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.sw-lap-btn:hover { background: var(--accent); color: #fff; }
+.sw-lap-btn:disabled { opacity: 0.4; cursor: default; }
+
+.sw-laps {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sw-laps-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sw-lap-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-family: monospace;
+}
+
+.sw-lap-row:last-child { border-bottom: none; }
+
+.sw-lap-num { font-size: 12px; font-weight: 600; color: var(--text-muted); width: 50px; }
+.sw-lap-time { font-size: 14px; font-weight: 700; color: var(--text-primary); flex: 1; }
+.sw-lap-diff { font-size: 12px; color: var(--accent); background: var(--accent-bg); padding: 2px 8px; border-radius: 20px; }

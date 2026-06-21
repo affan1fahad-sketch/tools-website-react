@@ -19,6 +19,8 @@ const tools = [
   { path: "/markdown-to-html", icon: "📋", color: "#dbeafe", cardClass: "card-blue", title: "Markdown to HTML", desc: "Convert Markdown to HTML with live preview.", badge: "New", badgeClass: "badge-new" },
   { path: "/calculator", icon: "🧮", color: "#dbeafe", cardClass: "card-blue", title: "Calculator", desc: "Scientific calculator with trig and log functions.", badge: "New", badgeClass: "badge-new" },
   { path: "/text-case-converter", icon: "🔤", color: "#fce7f3", cardClass: "card-pink", title: "Text Case Converter", desc: "Convert UPPER, lower, camelCase and more.", badge: "New", badgeClass: "badge-new" },
+  { path: "/stopwatch", icon: "⏱️", color: "#dcfce7", cardClass: "card-green", title: "Stopwatch & Timer", desc: "Precise stopwatch with lap times and countdown.", badge: "New", badgeClass: "badge-new" },
+  { path: "/tip-calculator", icon: "💰", color: "#dcfce7", cardClass: "card-green", title: "Tip Calculator", desc: "Calculate tip amount and split bills easily.", badge: "New", badgeClass: "badge-new" },
 ];
 
 const features = [

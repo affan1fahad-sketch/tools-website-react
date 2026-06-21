@@ -18,6 +18,8 @@ const allTools = [
   { path: "/markdown-to-html", label: "📋 Markdown to HTML" },
   { path: "/calculator", label: "🧮 Calculator" },
   { path: "/text-case-converter", label: "🔤 Text Case Converter" },
+  { path: "/stopwatch", label: "⏱️ Stopwatch & Timer" },
+  { path: "/tip-calculator", label: "💰 Tip Calculator" },
 ];
 
 function LogoIcon() {

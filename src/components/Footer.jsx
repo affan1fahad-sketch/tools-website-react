@@ -37,6 +37,8 @@ export default function Footer() {
             <NavLink to="/unit-converter">Unit Converter</NavLink>
             <NavLink to="/percentage-calculator">Percentage Calculator</NavLink>
             <NavLink to="/text-case-converter">Text Case Converter</NavLink>
+            <NavLink to="/stopwatch">Stopwatch & Timer</NavLink>
+            <NavLink to="/tip-calculator">Tip Calculator</NavLink>
           </div>
           <div className="footer-col">
             <h4>Site</h4>
