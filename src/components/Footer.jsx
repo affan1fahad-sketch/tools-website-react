@@ -29,12 +29,14 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <h4>Calculators</h4>
+            <NavLink to="/calculator">Calculator</NavLink>
             <NavLink to="/password-generator">Password Generator</NavLink>
             <NavLink to="/word-counter">Word Counter</NavLink>
             <NavLink to="/age-calculator">Age Calculator</NavLink>
             <NavLink to="/bmi-calculator">BMI Calculator</NavLink>
             <NavLink to="/unit-converter">Unit Converter</NavLink>
             <NavLink to="/percentage-calculator">Percentage Calculator</NavLink>
+            <NavLink to="/text-case-converter">Text Case Converter</NavLink>
           </div>
           <div className="footer-col">
             <h4>Site</h4>

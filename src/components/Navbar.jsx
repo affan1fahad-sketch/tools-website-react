@@ -16,6 +16,8 @@ const allTools = [
   { path: "/percentage-calculator", label: "% Percentage Calc" },
   { path: "/lorem-ipsum-generator", label: "📄 Lorem Ipsum" },
   { path: "/markdown-to-html", label: "📋 Markdown to HTML" },
+  { path: "/calculator", label: "🧮 Calculator" },
+  { path: "/text-case-converter", label: "🔤 Text Case Converter" },
 ];
 
 function LogoIcon() {

@@ -17,6 +17,8 @@ const tools = [
   { path: "/percentage-calculator", icon: "%", color: "#fef9c3", cardClass: "card-yellow", title: "Percentage Calculator", desc: "Calculate percentages and changes.", badge: "New", badgeClass: "badge-new" },
   { path: "/lorem-ipsum-generator", icon: "📄", color: "#f3e8ff", cardClass: "card-purple", title: "Lorem Ipsum", desc: "Generate placeholder text for designs.", badge: "New", badgeClass: "badge-new" },
   { path: "/markdown-to-html", icon: "📋", color: "#dbeafe", cardClass: "card-blue", title: "Markdown to HTML", desc: "Convert Markdown to HTML with live preview.", badge: "New", badgeClass: "badge-new" },
+  { path: "/calculator", icon: "🧮", color: "#dbeafe", cardClass: "card-blue", title: "Calculator", desc: "Scientific calculator with trig and log functions.", badge: "New", badgeClass: "badge-new" },
+  { path: "/text-case-converter", icon: "🔤", color: "#fce7f3", cardClass: "card-pink", title: "Text Case Converter", desc: "Convert UPPER, lower, camelCase and more.", badge: "New", badgeClass: "badge-new" },
 ];
 
 const features = [

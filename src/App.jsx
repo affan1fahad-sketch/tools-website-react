@@ -15,6 +15,8 @@ import UnitConverter from "./pages/UnitConverter";
 import PercentageCalculator from "./pages/PercentageCalculator";
 import LoremIpsum from "./pages/LoremIpsum";
 import MarkdownToHtml from "./pages/MarkdownToHtml";
+import ScientificCalculator from "./pages/ScientificCalculator";
+import TextCaseConverter from "./pages/TextCaseConverter";
 import Donate from "./pages/Donate";
 import Privacy from "./pages/Privacy";
 import "./App.css";
@@ -38,6 +40,8 @@ function App() {
           <Route path="/percentage-calculator" element={<PercentageCalculator />} />
           <Route path="/lorem-ipsum-generator" element={<LoremIpsum />} />
           <Route path="/markdown-to-html" element={<MarkdownToHtml />} />
+          <Route path="/calculator" element={<ScientificCalculator />} />
+          <Route path="/text-case-converter" element={<TextCaseConverter />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
