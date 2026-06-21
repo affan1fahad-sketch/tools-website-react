@@ -26,8 +26,9 @@ html {
   --accent-2: #7c3aed;
   --accent-bg: #eff6ff;
   --accent-border: #bfdbfe;
-  --hero-bg: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
-  --hero-glow: radial-gradient(ellipse at 25% 50%, rgba(37,99,235,0.25) 0%, transparent 60%), radial-gradient(ellipse at 75% 30%, rgba(124,58,237,0.2) 0%, transparent 50%);
+  --hero-bg: radial-gradient(at 20% 20%, #1e1b4b 0%, transparent 50%), radial-gradient(at 80% 0%, #312e81 0%, transparent 50%), radial-gradient(at 50% 100%, #1e3a8a 0%, transparent 50%), #0a0a0f;
+  --hero-grid: none;
+  --hero-glow: radial-gradient(ellipse, rgba(99,102,241,0.25) 0%, transparent 65%);
   --hero-fade: #f8fafc;
   --nav-bg: rgba(255,255,255,0.95);
   --nav-border: #f1f5f9;
@@ -54,8 +55,9 @@ html {
   --accent-2: #c084fc;
   --accent-bg: rgba(99,102,241,0.12);
   --accent-border: rgba(99,102,241,0.3);
-  --hero-bg: linear-gradient(135deg, #050507 0%, #0f0f1a 50%, #050507 100%);
-  --hero-glow: radial-gradient(ellipse at 25% 50%, rgba(99,102,241,0.2) 0%, transparent 60%), radial-gradient(ellipse at 75% 30%, rgba(168,85,247,0.15) 0%, transparent 50%);
+  --hero-bg: radial-gradient(at 20% 20%, #1e1b4b 0%, transparent 50%), radial-gradient(at 80% 0%, #312e81 0%, transparent 50%), radial-gradient(at 50% 100%, #1e3a8a 0%, transparent 50%), #050508;
+  --hero-grid: none;
+  --hero-glow: radial-gradient(ellipse, rgba(99,102,241,0.3) 0%, transparent 65%);
   --hero-fade: #0a0a0f;
   --nav-bg: rgba(10,10,15,0.92);
   --nav-border: #1a1a2a;
