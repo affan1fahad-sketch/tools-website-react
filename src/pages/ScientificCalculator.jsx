@@ -33,39 +33,96 @@ const SCI_BUTTONS = [
   ["(", ")", "e", "1/x"],
 ];
 
+const OP_MAP = { "÷": "/", "×": "*", "−": "-", "+": "+", "xʸ": "**" };
+
 export default function ScientificCalculator() {
   const [display, setDisplay] = useState("0");
-  const [expr, setExpr] = useState("");
+  const [stored, setStored] = useState(null);
+  const [operator, setOperator] = useState(null);
   const [newNum, setNewNum] = useState(true);
+  const [exprText, setExprText] = useState("");
+
+  const clearAll = () => {
+    setDisplay("0"); setStored(null); setOperator(null); setNewNum(true); setExprText("");
+  };
+
+  const inputDigit = (d) => {
+    if (newNum) {
+      setDisplay(d === "." ? "0." : d);
+      setNewNum(false);
+    } else {
+      if (d === "." && display.includes(".")) return;
+      setDisplay(display === "0" ? d : display + d);
+    }
+  };
+
+  const formatNum = (n) => (n === null || n === undefined || isNaN(n)) ? "" : String(n);
+
+  const compute = (a, b, op) => {
+    const jsOp = OP_MAP[op];
+    try {
+      const result = Function(`"use strict"; return (${a}${jsOp}${b})`)();
+      return parseFloat(result.toFixed(10));
+    } catch {
+      return NaN;
+    }
+  };
+
+  const applyUnary = (fn) => {
+    const val = parseFloat(display);
+    if (isNaN(val)) return;
+    const result = fn(val);
+    setDisplay(String(parseFloat(result.toFixed(10))));
+    setNewNum(true);
+  };
+
+  const chooseOperator = (op) => {
+    const current = parseFloat(display);
+    if (isNaN(current)) return;
+    if (stored !== null && operator && !newNum) {
+      const result = compute(stored, current, operator);
+      setStored(result);
+      setExprText(`${formatNum(result)} ${op}`);
+      setDisplay(String(result));
+    } else {
+      setStored(current);
+      setExprText(`${formatNum(current)} ${op}`);
+    }
+    setOperator(op);
+    setNewNum(true);
+  };
+
+  const equals = () => {
+    if (stored === null || operator === null) return;
+    const current = parseFloat(display);
+    if (isNaN(current)) { setDisplay("Error"); setNewNum(true); return; }
+    const result = compute(stored, current, operator);
+    setDisplay(isNaN(result) || !isFinite(result) ? "Error" : String(result));
+    setExprText("");
+    setStored(null);
+    setOperator(null);
+    setNewNum(true);
+  };
 
   const press = (btn) => {
-    try {
-      if (btn === "C") { setDisplay("0"); setExpr(""); setNewNum(true); return; }
-      if (btn === "⌫") { setDisplay(d => d.length > 1 ? d.slice(0, -1) : "0"); return; }
-      if (btn === "=") {
-        const result = Function(`"use strict"; return (${expr || display})`)();
-        setDisplay(String(parseFloat(result.toFixed(10))));
-        setExpr(""); setNewNum(true); return;
-      }
-      if (btn === "±") { setDisplay(d => String(-parseFloat(d))); return; }
-      if (btn === "%") { setDisplay(d => String(parseFloat(d) / 100)); return; }
-      if (btn === "π") { setDisplay(String(Math.PI)); setNewNum(true); return; }
-      if (btn === "e") { setDisplay(String(Math.E)); setNewNum(true); return; }
-      if (btn === "√") { setDisplay(d => String(Math.sqrt(parseFloat(d)))); return; }
-      if (btn === "x²") { setDisplay(d => String(parseFloat(d) ** 2)); return; }
-      if (btn === "log") { setDisplay(d => String(Math.log10(parseFloat(d)))); return; }
-      if (btn === "1/x") { setDisplay(d => String(1 / parseFloat(d))); return; }
-      if (btn === "sin") { setDisplay(d => String(parseFloat(Math.sin(parseFloat(d) * Math.PI / 180).toFixed(10)))); return; }
-      if (btn === "cos") { setDisplay(d => String(parseFloat(Math.cos(parseFloat(d) * Math.PI / 180).toFixed(10)))); return; }
-      if (btn === "tan") { setDisplay(d => String(parseFloat(Math.tan(parseFloat(d) * Math.PI / 180).toFixed(10)))); return; }
-      if (["÷", "×", "−", "+", "xʸ"].includes(btn)) {
-        const op = btn === "÷" ? "/" : btn === "×" ? "*" : btn === "−" ? "-" : btn === "xʸ" ? "**" : "+";
-        setExpr(expr + display + op); setNewNum(true); return;
-      }
-      if (["(", ")"].includes(btn)) { setExpr(e => e + btn); return; }
-      if (newNum) { setDisplay(btn === "." ? "0." : btn); setNewNum(false); }
-      else { setDisplay(d => d === "0" && btn !== "." ? btn : d + btn); }
-    } catch { setDisplay("Error"); setNewNum(true); }
+    if (display === "Error" && btn !== "C") { clearAll(); return; }
+    if (btn === "C") { clearAll(); return; }
+    if (btn === "⌫") { setDisplay(d => (d.length > 1 && d !== "Error") ? d.slice(0, -1) : "0"); return; }
+    if (btn === "=") { equals(); return; }
+    if (btn === "±") { const v = parseFloat(display); if (!isNaN(v)) setDisplay(String(-v)); return; }
+    if (btn === "%") { const v = parseFloat(display); if (!isNaN(v)) setDisplay(String(v / 100)); return; }
+    if (btn === "π") { setDisplay(String(Math.PI)); setNewNum(false); return; }
+    if (btn === "e") { setDisplay(String(Math.E)); setNewNum(false); return; }
+    if (btn === "√") { applyUnary(v => Math.sqrt(v)); return; }
+    if (btn === "x²") { applyUnary(v => v ** 2); return; }
+    if (btn === "log") { applyUnary(v => Math.log10(v)); return; }
+    if (btn === "1/x") { applyUnary(v => 1 / v); return; }
+    if (btn === "sin") { applyUnary(v => Math.sin(v * Math.PI / 180)); return; }
+    if (btn === "cos") { applyUnary(v => Math.cos(v * Math.PI / 180)); return; }
+    if (btn === "tan") { applyUnary(v => Math.tan(v * Math.PI / 180)); return; }
+    if (["÷", "×", "−", "+", "xʸ"].includes(btn)) { chooseOperator(btn); return; }
+    if (["(", ")"].includes(btn)) return;
+    inputDigit(btn);
   };
 
   return (
@@ -83,7 +140,7 @@ export default function ScientificCalculator() {
         <AdBanner />
         <div className="calc-wrap">
           <div className="calc-display">
-            <div className="calc-expr">{expr}</div>
+            <div className="calc-expr">{exprText}</div>
             <div className="calc-num">{display}</div>
           </div>
           <div className="calc-sci-grid">
@@ -112,7 +169,7 @@ export default function ScientificCalculator() {
           <ul>
             <li>Use the number pad for basic arithmetic</li>
             <li>Trig functions (sin, cos, tan) work in degrees</li>
-            <li>Use brackets for complex expressions</li>
+            <li>Press an operator, then the next number, then = to get your result</li>
           </ul>
         </div>
         <FAQ items={faqs} />
