@@ -19,6 +19,8 @@ import ScientificCalculator from "./pages/ScientificCalculator";
 import TextCaseConverter from "./pages/TextCaseConverter";
 import Stopwatch from "./pages/Stopwatch";
 import TipCalculator from "./pages/TipCalculator";
+import GpaCalculator from "./pages/GpaCalculator";
+import GradePercentageCalculator from "./pages/GradePercentageCalculator";
 import Donate from "./pages/Donate";
 import Privacy from "./pages/Privacy";
 import "./App.css";
@@ -46,6 +48,8 @@ function App() {
           <Route path="/text-case-converter" element={<TextCaseConverter />} />
           <Route path="/stopwatch" element={<Stopwatch />} />
           <Route path="/tip-calculator" element={<TipCalculator />} />
+          <Route path="/gpa-calculator" element={<GpaCalculator />} />
+          <Route path="/grade-percentage-calculator" element={<GradePercentageCalculator />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>

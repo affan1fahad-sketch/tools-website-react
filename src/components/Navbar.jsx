@@ -20,6 +20,8 @@ const allTools = [
   { path: "/text-case-converter", label: "🔤 Text Case Converter" },
   { path: "/stopwatch", label: "⏱️ Stopwatch & Timer" },
   { path: "/tip-calculator", label: "💰 Tip Calculator" },
+  { path: "/gpa-calculator", label: "🎓 GPA / CGPA Calculator" },
+  { path: "/grade-percentage-calculator", label: "📊 Grade Percentage" },
 ];
 
 function LogoIcon() {

@@ -39,6 +39,8 @@ export default function Footer() {
             <NavLink to="/text-case-converter">Text Case Converter</NavLink>
             <NavLink to="/stopwatch">Stopwatch & Timer</NavLink>
             <NavLink to="/tip-calculator">Tip Calculator</NavLink>
+            <NavLink to="/gpa-calculator">GPA / CGPA Calculator</NavLink>
+            <NavLink to="/grade-percentage-calculator">Grade Percentage</NavLink>
           </div>
           <div className="footer-col">
             <h4>Site</h4>

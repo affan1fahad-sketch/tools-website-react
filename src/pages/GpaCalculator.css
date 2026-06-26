@@ -1,0 +1,50 @@
+.gpa-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gpa-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 36px;
+  gap: 8px;
+  align-items: center;
+}
+
+.gpa-select {
+  margin-top: 0;
+}
+
+.gpa-credits {
+  margin-top: 0;
+}
+
+.gpa-remove {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.gpa-remove:hover { border-color: #fca5a5; color: #ef4444; background: rgba(239,68,68,0.06); }
+.gpa-remove:disabled { opacity: 0.3; cursor: default; }
+
+.grade-row {
+  display: grid;
+  grid-template-columns: 1.4fr 70px auto 70px 36px;
+  gap: 6px;
+  align-items: center;
+}
+.grade-name { margin-top: 0; }
+.grade-marks { margin-top: 0; text-align: center; }
+.grade-slash { font-size: 14px; font-weight: 700; color: var(--text-muted); text-align: center; }
+
+@media (max-width: 480px) {
+  .gpa-row { grid-template-columns: 1fr 80px 32px; gap: 6px; }
+  .grade-row { grid-template-columns: 1fr 50px auto 50px 30px; gap: 4px; }
+  .grade-name { font-size: 12px; }
+}
