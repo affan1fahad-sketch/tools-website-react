@@ -48,7 +48,7 @@ export default function Home() {
           <h1>Free Online<br />Tools</h1>
           <p className="hero-sub">Fast, browser-based tools that work instantly. No files uploaded, no accounts required.</p>
           <div className="hero-stats">
-            <div className="stat-item"><span className="stat-number">11+</span><span className="stat-label">Free tools</span></div>
+            <div className="stat-item"><span className="stat-number">19+</span><span className="stat-label">Free tools</span></div>
             <div className="stat-item"><span className="stat-number">0</span><span className="stat-label">Uploads needed</span></div>
             <div className="stat-item"><span className="stat-number">100%</span><span className="stat-label">Private</span></div>
           </div>
