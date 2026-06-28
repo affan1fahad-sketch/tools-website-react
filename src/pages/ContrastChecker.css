@@ -1,0 +1,48 @@
+.cc-preview {
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  transition: background 0.15s, color 0.15s;
+}
+.cc-preview-large {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.cc-preview-normal {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cc-ratio-box {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.cc-ratio-num { font-size: 2.2rem; font-weight: 800; color: var(--accent); letter-spacing: -1px; }
+.cc-ratio-lab { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+.cc-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.cc-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+.cc-check.pass { border-color: var(--success-border); background: var(--success-bg); color: var(--success-text); }
+.cc-check.fail { border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.06); color: #ef4444; }

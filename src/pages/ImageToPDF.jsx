@@ -14,6 +14,8 @@ const faqs = [
   { q: "How many images can I convert at once?", a: "There is no limit. You can add as many images as you need to a single PDF." },
   { q: "What is the difference between Fit and Fill mode?", a: "Fit mode preserves your image's aspect ratio and centers it on the page. Fill mode stretches the image to cover the full A4 page." },
   { q: "Can I reorder images before converting?", a: "Yes! Use the up and down arrows next to each image to reorder them before converting." },
+  { q: "Why would I convert images to PDF instead of just sharing photos?", a: "PDFs keep multiple pages in one file, print consistently across devices, and are the expected format for assignments, scanned documents, and official submissions." },
+  { q: "Does converting reduce image quality?", a: "In Fit mode your original resolution is preserved. In Fill mode the image is stretched to the page size, which can slightly distort very different aspect ratios." },
 ];
 
 const related = [
@@ -99,11 +101,36 @@ export default function ImageToPDF() {
             {converting ? "Converting…" : `Convert ${images.length} image${images.length>1?"s":""} to PDF`}
           </RippleButton>
         </>)}
+
         <div className="tool-info-box">
           <h2>How it works</h2>
           <ol><li>Upload one or more images</li><li>Reorder them as needed</li><li>Choose fit or fill layout</li><li>Click Convert — PDF downloads instantly</li></ol>
           <p>✅ Your files <strong>never leave your browser</strong>.</p>
         </div>
+
+        <div className="tool-info-box">
+          <h2>Why convert images to PDF?</h2>
+          <p style={{ marginBottom: 10 }}>
+            Single image files are fine for sharing one photo, but the moment you have more than one page —
+            a multi-page assignment, scanned receipts, ID documents, or a portfolio of screenshots — a PDF
+            keeps everything in the correct order inside one file that opens identically on any device.
+          </p>
+          <p>
+            Most colleges, government portals, and job applications specifically request PDF uploads rather
+            than individual images, because PDFs preserve formatting and print consistently across operating
+            systems. Converting locally in your browser, like this tool does, also means scanned IDs or
+            personal documents never touch a third-party server.
+          </p>
+        </div>
+
+        <div className="tool-info-box">
+          <h2>Fit vs. Fill — which should you choose?</h2>
+          <ul>
+            <li><strong>Fit</strong> keeps your image's original proportions and centers it on an A4 page with white space around it — best for documents, scanned pages, and anything where the aspect ratio matters.</li>
+            <li><strong>Fill</strong> stretches the image to cover the entire page edge-to-edge — best for single full-bleed photos where you don't mind some cropping or slight distortion.</li>
+          </ul>
+        </div>
+
         <FAQ items={faqs} />
         <RelatedTools tools={related} />
       </main>

@@ -17,6 +17,8 @@ const faqs = [
   { q: "How long should my password be?", a: "We recommend at least 16 characters for important accounts like email and banking. 12+ is acceptable for less critical accounts." },
   { q: "Should I include symbols in my password?", a: "Yes! Including symbols like !@#$ significantly increases password strength and makes it much harder to crack." },
   { q: "Can I use these passwords everywhere?", a: "Yes, but never reuse the same password across multiple sites. Use a password manager like Bitwarden or 1Password to store them." },
+  { q: "How is password strength actually measured here?", a: "We score based on length and the variety of character types used (uppercase, lowercase, numbers, symbols). More length and more variety both increase the number of possible combinations an attacker has to guess." },
+  { q: "Why does length matter more than complexity?", a: "Each extra character multiplies the number of possible passwords exponentially, while adding one more character type only multiplies it by a small constant. A long passphrase often beats a short complex password." },
 ];
 const related = [
   { path: "/word-counter", icon: "📝", color: "#fce7f3", title: "Word Counter", desc: "Count words and characters" },
@@ -50,14 +52,40 @@ export default function PasswordGenerator() {
             <span className="pw-output">{password||"Click generate below"}</span>
             <button className={`copy-btn ${copied?"copied":""}`} onClick={copy} disabled={!password}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          {password && (<div className="strength-row"><div className="strength-bars">{[1,2,3,4].map(n=><div key={n} className="strength-bar" style={{background:n<=strength.score?strength.color:"#e2e8f0"}}/>)}</div><span className="strength-label" style={{color:strength.color}}>{strength.label}</span></div>)}
+          {password && (<div className="strength-row"><div className="strength-bars">{[1,2,3,4].map(n=><div key={n} className="strength-bar" style={{background:n<=strength.score?strength.color:"var(--border)"}}/>)}</div><span className="strength-label" style={{color:strength.color}}>{strength.label}</span></div>)}
           <div className="pw-options">
             <label className="field-label">Length: <strong>{length}</strong><input type="range" min="4" max="64" value={length} onChange={e=>setLength(Number(e.target.value))} className="range-input"/></label>
             <div className="char-opts">{Object.entries({upper:"A–Z",lower:"a–z",numbers:"0–9",symbols:"!@#"}).map(([key,label])=><button key={key} className={`char-btn ${opts[key]?"active":""}`} onClick={()=>toggleOpt(key)}>{label}</button>)}</div>
           </div>
           <RippleButton className="primary-btn" onClick={generate}>⟳ Generate password</RippleButton>
         </div>
+
         <div className="tool-info-box"><h2>Password security tips</h2><ul><li>Use at least 16 characters for critical accounts</li><li>Enable symbols for maximum entropy</li><li>Never reuse passwords across sites</li><li>Store passwords in a manager like Bitwarden</li></ul></div>
+
+        <div className="tool-info-box">
+          <h2>Why random passwords matter</h2>
+          <p style={{ marginBottom: 10 }}>
+            Most password breaches don't come from someone guessing your password by hand — they come from
+            automated tools that try millions of combinations per second, or from leaked password lists being
+            replayed against other sites you use. A password like "Affan@2007" is easy to remember but sits
+            inside a predictable pattern (name + symbol + year) that cracking tools check first.
+          </p>
+          <p>
+            A truly random password generated from a large character set has no pattern to exploit, which is
+            why generators like this one are recommended over anything you could come up with yourself.
+          </p>
+        </div>
+
+        <div className="tool-info-box">
+          <h2>What makes a password actually strong?</h2>
+          <ul>
+            <li><strong>Length first</strong> — 16+ characters beats almost any short "complex" password.</li>
+            <li><strong>Character variety second</strong> — mixing uppercase, lowercase, numbers and symbols multiplies the guessing space.</li>
+            <li><strong>Uniqueness always</strong> — a strong password reused across 5 sites is only as safe as the weakest of those 5.</li>
+            <li><strong>A password manager</strong> — so you never need to remember or reuse a generated password yourself.</li>
+          </ul>
+        </div>
+
         <FAQ items={faqs} />
         <RelatedTools tools={related} />
       </main>

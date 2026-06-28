@@ -11,14 +11,18 @@ const faqs = [
   { q: "Is this QR code generator free?", a: "Yes, completely free with no watermark and no signup required." },
   { q: "What can I encode in a QR code?", a: "URLs, plain text, email addresses, phone numbers, WiFi credentials, and more." },
   { q: "How do I download the QR code?", a: "Click the Download QR Code button to save it as a PNG image to your device." },
-  { q: "Will my QR code expire?", a: "No. QR codes generated here are permanent and will never expire." },
+  { q: "Will my QR code expire?", a: "No. QR codes generated here are permanent and will never expire, since the data is encoded directly in the pattern — there's no server tracking or redirect involved." },
   { q: "Can I change the color of my QR code?", a: "Yes! Use the color picker to change the QR code color to match your brand." },
+  { q: "Why won't my QR code scan?", a: "Low contrast between the QR color and its white background is the most common cause. Stick to dark colors on a light background, and avoid making the code too small when printed." },
+  { q: "Can I use this QR code commercially?", a: "Yes. The QR codes generated here have no licensing restriction — use them on packaging, posters, business cards, or anywhere else." },
 ];
+
 const related = [
   { path: "/image-to-pdf", icon: "📄", color: "#dbeafe", title: "Image to PDF", desc: "Merge images into PDF" },
   { path: "/password-generator", icon: "🔐", color: "#fef9c3", title: "Password Generator", desc: "Create strong passwords" },
   { path: "/color-picker", icon: "🎨", color: "#fce7f3", title: "Color Picker", desc: "Convert HEX, RGB colors" },
 ];
+
 export default function QRGenerator() {
   const [text, setText] = useState("");
   const [fgColor, setFgColor] = useState("#000000");
@@ -47,10 +51,39 @@ export default function QRGenerator() {
             {text && <RippleButton className="primary-btn" onClick={downloadQR}>⬇ Download QR Code (PNG)</RippleButton>}
           </div>
           <div className="qr-preview" id="qr-canvas">
-            {text ? <QRCodeCanvas value={text} size={Math.min(size,280)} fgColor={fgColor} includeMargin={true}/> : <div className="qr-placeholder"><p>QR preview</p><p style={{fontSize:12,color:"#94a3b8",marginTop:4}}>Type something above</p></div>}
+            {text ? <QRCodeCanvas value={text} size={Math.min(size,280)} fgColor={fgColor} includeMargin={true}/> : <div className="qr-placeholder"><p>QR preview</p><p style={{fontSize:12,color:"var(--text-muted)",marginTop:4}}>Type something above</p></div>}
           </div>
         </div>
-        <div className="tool-info-box"><h2>What can I encode?</h2><ul><li>Website URLs</li><li>Plain text or messages</li><li>Email addresses</li><li>Phone numbers</li><li>WiFi credentials</li></ul></div>
+
+        <div className="tool-info-box">
+          <h2>What can I encode?</h2>
+          <ul><li>Website URLs</li><li>Plain text or messages</li><li>Email addresses</li><li>Phone numbers</li><li>WiFi credentials</li></ul>
+        </div>
+
+        <div className="tool-info-box">
+          <h2>How QR codes actually work</h2>
+          <p style={{ marginBottom: 10 }}>
+            A QR code is a grid of black and white squares that encodes data directly in its pattern — there's
+            no internet connection or database lookup involved when a phone scans it. That's why a QR code for
+            plain text or a phone number works instantly even offline, and why it never "expires": the
+            information is the code itself, not a link to it stored on some server.
+          </p>
+          <p>
+            This also means once you generate and download a QR code here, it will keep working forever —
+            nothing on our end can break it later, since we don't host or track anything after you download it.
+          </p>
+        </div>
+
+        <div className="tool-info-box">
+          <h2>Tips for QR codes that actually scan</h2>
+          <ul>
+            <li>Keep strong contrast — dark code on a light background scans far more reliably than light-on-dark or similar tones.</li>
+            <li>Don't shrink it too much on print materials — a code smaller than about 2cm (0.8in) can fail on cheaper phone cameras.</li>
+            <li>Leave white space (a "quiet zone") around the code — cropping it too tightly can confuse the scanner.</li>
+            <li>Test your code with two or three different phones before printing it at scale.</li>
+          </ul>
+        </div>
+
         <FAQ items={faqs} />
         <RelatedTools tools={related} />
       </main>

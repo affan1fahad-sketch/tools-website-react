@@ -23,6 +23,11 @@ const tools = [
   { path: "/tip-calculator", icon: "💰", color: "#dcfce7", cardClass: "card-green", title: "Tip Calculator", desc: "Calculate tip amount and split bills easily.", badge: "New", badgeClass: "badge-new" },
   { path: "/gpa-calculator", icon: "🎓", color: "#dbeafe", cardClass: "card-blue", title: "GPA / CGPA Calculator", desc: "Calculate your semester GPA or overall CGPA.", badge: "New", badgeClass: "badge-new" },
   { path: "/grade-percentage-calculator", icon: "📊", color: "#fce7f3", cardClass: "card-pink", title: "Grade Percentage", desc: "Calculate exam percentage and grade from marks.", badge: "New", badgeClass: "badge-new" },
+  { path: "/currency-converter", icon: "💱", color: "#dcfce7", cardClass: "card-green", title: "Currency Converter", desc: "Convert currencies with live exchange rates.", badge: "New", badgeClass: "badge-new" },
+  { path: "/character-limit-checker", icon: "📏", color: "#fce7f3", cardClass: "card-pink", title: "Character Limit Checker", desc: "Check text against Twitter, SEO and Instagram limits.", badge: "New", badgeClass: "badge-new" },
+  { path: "/emi-calculator", icon: "🏦", color: "#dbeafe", cardClass: "card-blue", title: "EMI Calculator", desc: "Calculate monthly loan EMI and total interest.", badge: "New", badgeClass: "badge-new" },
+  { path: "/date-difference-calculator", icon: "📅", color: "#dbeafe", cardClass: "card-blue", title: "Date Difference", desc: "Calculate days, weeks and months between two dates.", badge: "New", badgeClass: "badge-new" },
+  { path: "/color-contrast-checker", icon: "🌗", color: "#f3e8ff", cardClass: "card-purple", title: "Color Contrast Checker", desc: "Check WCAG accessibility contrast compliance.", badge: "New", badgeClass: "badge-new" },
 ];
 
 const features = [
@@ -48,7 +53,7 @@ export default function Home() {
           <h1>Free Online<br />Tools</h1>
           <p className="hero-sub">Fast, browser-based tools that work instantly. No files uploaded, no accounts required.</p>
           <div className="hero-stats">
-            <div className="stat-item"><span className="stat-number">19+</span><span className="stat-label">Free tools</span></div>
+            <div className="stat-item"><span className="stat-number">25+</span><span className="stat-label">Free tools</span></div>
             <div className="stat-item"><span className="stat-number">0</span><span className="stat-label">Uploads needed</span></div>
             <div className="stat-item"><span className="stat-number">100%</span><span className="stat-label">Private</span></div>
           </div>

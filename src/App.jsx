@@ -21,6 +21,11 @@ import Stopwatch from "./pages/Stopwatch";
 import TipCalculator from "./pages/TipCalculator";
 import GpaCalculator from "./pages/GpaCalculator";
 import GradePercentageCalculator from "./pages/GradePercentageCalculator";
+import CurrencyConverter from "./pages/CurrencyConverter";
+import CharLimitChecker from "./pages/CharLimitChecker";
+import EmiCalculator from "./pages/EmiCalculator";
+import DateDifference from "./pages/DateDifference";
+import ContrastChecker from "./pages/ContrastChecker";
 import Donate from "./pages/Donate";
 import Privacy from "./pages/Privacy";
 import "./App.css";
@@ -50,6 +55,11 @@ function App() {
           <Route path="/tip-calculator" element={<TipCalculator />} />
           <Route path="/gpa-calculator" element={<GpaCalculator />} />
           <Route path="/grade-percentage-calculator" element={<GradePercentageCalculator />} />
+          <Route path="/currency-converter" element={<CurrencyConverter />} />
+          <Route path="/character-limit-checker" element={<CharLimitChecker />} />
+          <Route path="/emi-calculator" element={<EmiCalculator />} />
+          <Route path="/date-difference-calculator" element={<DateDifference />} />
+          <Route path="/color-contrast-checker" element={<ContrastChecker />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>

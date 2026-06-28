@@ -26,6 +26,8 @@ export default function Footer() {
             <NavLink to="/lorem-ipsum-generator">Lorem Ipsum</NavLink>
             <NavLink to="/markdown-to-html">Markdown to HTML</NavLink>
             <NavLink to="/color-picker">Color Picker</NavLink>
+            <NavLink to="/currency-converter">Currency Converter</NavLink>
+            <NavLink to="/color-contrast-checker">Color Contrast Checker</NavLink>
           </div>
           <div className="footer-col">
             <h4>Calculators</h4>
@@ -41,6 +43,9 @@ export default function Footer() {
             <NavLink to="/tip-calculator">Tip Calculator</NavLink>
             <NavLink to="/gpa-calculator">GPA / CGPA Calculator</NavLink>
             <NavLink to="/grade-percentage-calculator">Grade Percentage</NavLink>
+            <NavLink to="/character-limit-checker">Character Limit Checker</NavLink>
+            <NavLink to="/date-difference-calculator">Date Difference</NavLink>
+            <NavLink to="/emi-calculator">EMI Calculator</NavLink>
           </div>
           <div className="footer-col">
             <h4>Site</h4>

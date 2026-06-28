@@ -22,6 +22,11 @@ const allTools = [
   { path: "/tip-calculator", label: "💰 Tip Calculator" },
   { path: "/gpa-calculator", label: "🎓 GPA / CGPA Calculator" },
   { path: "/grade-percentage-calculator", label: "📊 Grade Percentage" },
+  { path: "/currency-converter", label: "💱 Currency Converter" },
+  { path: "/character-limit-checker", label: "📏 Character Limit Checker" },
+  { path: "/emi-calculator", label: "🏦 EMI Calculator" },
+  { path: "/date-difference-calculator", label: "📅 Date Difference" },
+  { path: "/color-contrast-checker", label: "🌗 Color Contrast Checker" },
 ];
 
 function LogoIcon() {

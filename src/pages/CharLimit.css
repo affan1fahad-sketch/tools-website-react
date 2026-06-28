@@ -1,0 +1,43 @@
+.cl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.cl-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.15s;
+}
+.cl-card.over { border-color: rgba(239,68,68,0.4); }
+
+.cl-card-top { display: flex; align-items: center; gap: 8px; }
+.cl-icon { font-size: 16px; }
+.cl-label { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+
+.cl-bar-track {
+  height: 6px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cl-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.cl-count-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cl-count { font-size: 12px; color: var(--text-muted); font-family: monospace; }
+.cl-remaining { font-size: 12px; font-weight: 700; color: var(--success-text); }
+.cl-remaining.over { color: #ef4444; }
