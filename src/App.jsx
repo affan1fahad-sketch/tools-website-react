@@ -26,6 +26,8 @@ import CharLimitChecker from "./pages/CharLimitChecker";
 import EmiCalculator from "./pages/EmiCalculator";
 import DateDifference from "./pages/DateDifference";
 import ContrastChecker from "./pages/ContrastChecker";
+import BlogCgpa from "./pages/BlogCgpa";
+import NotFound from "./pages/NotFound";
 import Donate from "./pages/Donate";
 import Privacy from "./pages/Privacy";
 import "./App.css";
@@ -60,8 +62,10 @@ function App() {
           <Route path="/emi-calculator" element={<EmiCalculator />} />
           <Route path="/date-difference-calculator" element={<DateDifference />} />
           <Route path="/color-contrast-checker" element={<ContrastChecker />} />
+          <Route path="/blog/how-to-calculate-cgpa" element={<BlogCgpa />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
