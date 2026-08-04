@@ -21,8 +21,11 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Convert & Generate</h4>
             <NavLink to="/image-to-pdf">Image to PDF</NavLink>
-            <NavLink to="/qr-code-generator">QR Code Generator</NavLink>
             <NavLink to="/image-compressor">Image Compressor</NavLink>
+            <NavLink to="/image-resizer">Image Resizer</NavLink>
+            <NavLink to="/image-to-base64">Image to Base64</NavLink>
+            <NavLink to="/pdf-to-text">PDF to Text</NavLink>
+            <NavLink to="/qr-code-generator">QR Code Generator</NavLink>
             <NavLink to="/lorem-ipsum-generator">Lorem Ipsum</NavLink>
             <NavLink to="/markdown-to-html">Markdown to HTML</NavLink>
             <NavLink to="/color-picker">Color Picker</NavLink>
@@ -50,6 +53,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Site</h4>
             <NavLink to="/">Home</NavLink>
+            <NavLink to="/blog/how-to-calculate-cgpa">Blog</NavLink>
             <NavLink to="/donate">Support Us ☕</NavLink>
             <NavLink to="/privacy">Privacy Policy</NavLink>
             <a href="mailto:affanfahad7@gmail.com">Contact</a>

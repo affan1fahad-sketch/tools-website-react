@@ -26,6 +26,9 @@ import CharLimitChecker from "./pages/CharLimitChecker";
 import EmiCalculator from "./pages/EmiCalculator";
 import DateDifference from "./pages/DateDifference";
 import ContrastChecker from "./pages/ContrastChecker";
+import PdfToText from "./pages/PdfToText";
+import ImageResizer from "./pages/ImageResizer";
+import ImageToBase64 from "./pages/ImageToBase64";
 import BlogCgpa from "./pages/BlogCgpa";
 import NotFound from "./pages/NotFound";
 import Donate from "./pages/Donate";
@@ -62,6 +65,9 @@ function App() {
           <Route path="/emi-calculator" element={<EmiCalculator />} />
           <Route path="/date-difference-calculator" element={<DateDifference />} />
           <Route path="/color-contrast-checker" element={<ContrastChecker />} />
+          <Route path="/pdf-to-text" element={<PdfToText />} />
+          <Route path="/image-resizer" element={<ImageResizer />} />
+          <Route path="/image-to-base64" element={<ImageToBase64 />} />
           <Route path="/blog/how-to-calculate-cgpa" element={<BlogCgpa />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/privacy" element={<Privacy />} />

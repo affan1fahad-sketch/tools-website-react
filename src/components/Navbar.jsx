@@ -6,6 +6,9 @@ import "./Navbar.css";
 const allTools = [
   { path: "/image-to-pdf", label: "📄 Image to PDF" },
   { path: "/image-compressor", label: "🗜️ Image Compressor" },
+  { path: "/image-resizer", label: "🖼️ Image Resizer" },
+  { path: "/image-to-base64", label: "🔢 Image to Base64" },
+  { path: "/pdf-to-text", label: "📑 PDF to Text" },
   { path: "/qr-code-generator", label: "▦ QR Code Generator" },
   { path: "/password-generator", label: "🔐 Password Generator" },
   { path: "/word-counter", label: "📝 Word Counter" },
@@ -43,7 +46,6 @@ export default function Navbar() {
   const [dropOpen, setDropOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { dark, toggle } = useTheme();
-
   const closeMobile = () => setMobileOpen(false);
 
   return (
@@ -54,13 +56,9 @@ export default function Navbar() {
           <span className="logo-text">Tool<span>Kit</span></span>
           <span className="logo-badge">FREE</span>
         </NavLink>
-
-        {/* Desktop links */}
         <div className="nav-links">
           <NavLink to="/" end className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
-          <div className="nav-dropdown"
-            onMouseEnter={() => setDropOpen(true)}
-            onMouseLeave={() => setDropOpen(false)}>
+          <div className="nav-dropdown" onMouseEnter={() => setDropOpen(true)} onMouseLeave={() => setDropOpen(false)}>
             <button className="nav-link dropdown-trigger">Tools ▾</button>
             {dropOpen && (
               <div className="dropdown-menu">
@@ -77,8 +75,6 @@ export default function Navbar() {
           </button>
           <NavLink to="/donate" className="nav-link donate-nav-btn">☕ Support</NavLink>
         </div>
-
-        {/* Mobile right side: toggle + hamburger */}
         <div className="nav-right-mobile">
           <button className="theme-toggle-btn" onClick={toggle} aria-label="Toggle dark mode">
             {dark ? "☀️" : "🌙"}
@@ -88,8 +84,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
-      {/* Mobile menu */}
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
         <div className="mobile-menu-section">
           <div className="mobile-menu-title">Navigation</div>
@@ -102,17 +96,13 @@ export default function Navbar() {
           <div className="mobile-menu-title">All Tools</div>
           <div className="mobile-menu-grid">
             {allTools.map(t => (
-              <NavLink key={t.path} to={t.path}
-                className={({ isActive }) => `mobile-menu-item ${isActive ? "active" : ""}`}
-                onClick={closeMobile}>
+              <NavLink key={t.path} to={t.path} className={({ isActive }) => `mobile-menu-item ${isActive ? "active" : ""}`} onClick={closeMobile}>
                 {t.label}
               </NavLink>
             ))}
           </div>
         </div>
-        <NavLink to="/donate" className="mobile-donate-btn" onClick={closeMobile}>
-          ☕ Support this project
-        </NavLink>
+        <NavLink to="/donate" className="mobile-donate-btn" onClick={closeMobile}>☕ Support this project</NavLink>
       </div>
     </>
   );
